@@ -3,18 +3,19 @@ from model import Client
 class Bookshop:
     def __init__(self):
         self.clientRep = ClientRepository()
-    def getClientById(self,id):
-        client = self.clientRep.cautaDupaID(id)
-        print(client.toString())
 
-    def addClient(self,client):
-        self.clientRep.adaugaClient(client)
-    def printClients(self):
-        self.clientRep.printAllClients()
+    def GetClientById(self,id):
+        a = self.clientRep.GetClientById(id)
+        return a
+    def AddNewClient(self,client):
+        self.clientRep.addClient(client)
 
-bookshop = Bookshop()
-bookshop.getClientById(2)
 
-client=Client(201,218,"Ion Nistor")
-bookshop.addClient(client)
-bookshop.printClients()
+shop = Bookshop()
+client = shop.GetClientById(1)
+client1 = Client(420,699,"odin","artiom","pupkin")
+shop.AddNewClient(client1)
+shop.AddNewClient(client)
+print(client.toString())
+
+

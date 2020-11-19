@@ -3,24 +3,26 @@ from model import Client,Book
 
 class ClientRepository:
     lista_de_clienti = [
-        Client(1,500,"Chisinau-Grenoble"),
-        Client(2,1000,"Chisinau-Banulescu Bodonii"),
-        Client(3, 0, "Soroca-Strada Sorocii"),
-        Client(4,1000, "Briceni-Strada victoriei 1/2"),
-        Client(5, 50000, "Chisinau-Grenoble")
+        Client(1,500,"Chisinau-Grenoble", "Marcel", "Tri"),
+        Client(2,1000,"Chisinau-Banulescu Bodonii", "Anton", "Solomon"),
+        Client(3, 0, "Soroca-Strada Sorocii", "Roman", "Canibal"),
+        Client(4,1000, "Briceni-Strada victoriei 1/2", "Ion", "Batan"),
+        Client(5, 50000, "Chisinau-Grenoble", "Simion", "Caprosu")
     ]
-
-    def adaugaClient(self,client):
-        self.lista_de_clienti.append(client)
-
-    def cautaDupaID(self,id):
+    def GetClientById(self,id):
         for client in self.lista_de_clienti:
-            if id == client.id:
+            if client.id == id:
                 return client
 
-    def printAllClients(self):
+    def addClient(self,clienttoadd):
         for client in self.lista_de_clienti:
-            print(client.toString())
+            if client.id == clienttoadd.id:
+                print("client esti")
+        else:
+            self.lista_de_clienti.append(clienttoadd)
+
+
+
 
 class BookRepository:
     lista_de_carti = [
