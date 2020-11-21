@@ -108,3 +108,13 @@ def giveMeANumber():
 
 
 print(giveMeANumber())
+
+def isChetnoye(number):
+    if number % 2 == 0:
+        return True
+    else:
+        return False
+
+otvet = isChetnoye(29)
+print(otvet)
+
