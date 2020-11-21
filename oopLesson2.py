@@ -6,10 +6,20 @@ class Parcare:
         self.locuri = LocuriRepositorry()
 
     def OcupaLocul(self):
+        check = False
+
         self.locuri.afiseazalocuri()
-        loc_id = int(input("Alege un loc : "))
+
+        try:
+            loc_id = int(input("Alege un loc : "))
+        except:
+            loc_id = -1
+            print("Nu ai introdus datele corect")
+
+
         for loc in self.locuri.lista_de_locuri:
             if loc.id == loc_id:
+                check = True
                 if loc.ocupat == False:
                     nume = input("Introdu numele: ")
                     prenume = input("Introdu prenumele: ")
@@ -17,6 +27,8 @@ class Parcare:
                     self.id += 1
                     loc.ocupat = True
                     loc.client = client
+        if check == False:
+            print("----------------/Loc cu asa id nu exista/--------------")
 
     def elibereazaLocul(self,id_client):
         for loc in self.locuri.lista_de_locuri:
@@ -66,10 +78,4 @@ class Client:
 parcare1 = Parcare(5)
 
 parcare1.OcupaLocul()
-
-parcare1.locuri.afiseazalocuri()
-
-
-parcare1.elibereazaLocul(0)
-print("----------------------------------------")
-parcare1.locuri.afiseazalocuri()
+parcare1.OcupaLocul()
