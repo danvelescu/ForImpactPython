@@ -45,6 +45,27 @@ class XO:
                 numberImput = input("")
 
 
+        def chechVictorry(field):
+            if(field[0]==field[4] and field[8]==field[4]):
+                return field[0]
+            elif(field[2]==field[4] and field[6]==field[4]):
+                return field[2]
+            elif (field[0] == field[3] and field[6] == field[3]):
+                return field[3]
+            elif (field[1] == field[4] and field[4] == field[7]):
+                return field[1]
+            elif (field[2] == field[5] and field[5] == field[8]):
+                return field[2]
+            elif (field[0] == field[1] and field[1] == field[2]):
+                return field[1]
+            elif (field[3] == field[4] and field[4] == field[5]):
+                return field[3]
+            elif (field[6] == field[7] and field[7] == field[8]):
+                return field[6]
+            else:
+                return "_"
+
+
 
 
 game = XO()
