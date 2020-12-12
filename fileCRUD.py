@@ -52,7 +52,8 @@ class Product:
         print(summ)
 
 
-
+#user interface menu
+#buy products and 2 chouses
 
 
 
