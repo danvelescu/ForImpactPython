@@ -83,9 +83,8 @@
 # print(phones["phones"]["phone2"]["clients"]["client5"]["name"])
 
 
-
-
-
+#
+#
 
 class Phone:
     model = ''
@@ -94,18 +93,59 @@ class Phone:
     clients = ''
 
 
-phone1 = Phone()
-phone2 = Phone()
-phone3 = Phone()
-phone4 = Phone()
-phone5 = Phone()
-phone16 = Phone()
+#
+# phone1 = Phone()
+# phone2 = Phone()
+# phone3 = Phone()
+# phone4 = Phone()
+# phone5 = Phone()
+# phone16 = Phone()
+#
+# phone1.series = "mi2"
+#
+# text = "text"
+# nomer = 1
+# nomer = str(phone1)
+#
+# print(text+nomer)
+# spisok = range(1,11)
+#
+# thisset = {"a", "b", "c","d"}
+# phone = Phone()
+# print("sadasd"-10)
+#
+# for element in thisset:
+#     print(element)
+#
+# print(thisset)
 
-phone1.series = "mi2"
+import random
 
-text = "text"
-nomer = 1
-nomer = str(phone1)
+list1 = [5, 1, 54, 6, 1, 3, 6, 8, 2, 5, 46]
+list2 = []
+results = []
 
-print(text+nomer)
+for nr in range(11):
+    list2.append(random.randint(2, 10))
 
+for nr in range(11):
+    results.append(int(list1[nr] / list2[nr]))
+
+
+
+print(results)
+factorialResults = []
+for nr in results:
+    if nr == 0:
+        factorialResults.append(0)
+        continue
+    elif nr == 1:
+        factorialResults.append(1)
+        continue
+    summ=1
+    while nr > 0:
+        summ*=nr
+        nr-=1
+    factorialResults.append(summ)
+
+print(factorialResults)
